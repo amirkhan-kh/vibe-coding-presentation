@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Vibe Coding ochiq darsi — dars xaritasi</title>
+<style>
+  @page { size: A4; margin: 14mm 13mm 14mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #1f1f2e; font-size: 11.2pt; line-height: 1.5; margin: 0; }
+  h1 { font-size: 26pt; margin: 0 0 6px; letter-spacing: -0.5px; }
+  h2 { font-size: 16pt; color: #7000FF; margin: 26px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #ece3ff; page-break-after: avoid; }
+  h3 { font-size: 12.5pt; margin: 0; }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 4px 0; padding-left: 20px; }
+  li { margin: 2px 0; }
+  .cover { background: linear-gradient(135deg, #7000FF 0%, #9b4dff 100%); color: #fff; border-radius: 16px; padding: 28px 30px; margin-bottom: 18px; }
+  .cover .sub { font-size: 12.5pt; opacity: .95; }
+  .cover .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .chip { background: rgba(255,255,255,.18); border-radius: 999px; padding: 4px 12px; font-size: 10pt; }
+  .goal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .goal div { background: #f6f1ff; border-radius: 12px; padding: 12px; font-size: 10.5pt; }
+  .goal b { color: #7000FF; display: block; margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+  th { background: #7000FF; color: #fff; text-align: left; padding: 7px 9px; }
+  td { padding: 6px 9px; border-bottom: 1px solid #eee; vertical-align: top; }
+  tr:nth-child(even) td { background: #faf8ff; }
+  .block { border: 1px solid #e6defa; border-radius: 14px; padding: 14px 16px; margin: 12px 0; page-break-inside: avoid; }
+  .block-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .time { background: #7000FF; color: #fff; border-radius: 8px; padding: 3px 10px; font-weight: 700; font-size: 10pt; white-space: nowrap; }
+  .slide { margin-left: auto; font-size: 9pt; color: #7000FF; background: #f1e9ff; border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+  .lbl { display: inline-block; font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; border-radius: 5px; padding: 1px 7px; margin: 6px 0 2px; }
+  .do { background: #e9e0ff; color: #5200c2; }
+  .say { background: #fff4c2; color: #7a5b00; }
+  .fx { background: #dcf7e6; color: #0b6b34; }
+  .say-box { background: #fffbea; border-left: 3px solid #f5c400; padding: 6px 10px; border-radius: 0 8px 8px 0; margin: 4px 0; font-style: italic; }
+  .fx-box { color: #0b6b34; font-size: 10.5pt; }
+  .part { background: #1f1f2e; color: #fff; border-radius: 12px; padding: 10px 16px; margin: 20px 0 4px; font-weight: 700; font-size: 12.5pt; page-break-after: avoid; }
+  .part span { color: #c9a8ff; }
+  .check li { list-style: none; margin-left: -18px; }
+  .check li::before { content: "☐  "; color: #7000FF; font-weight: 700; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { background: #faf8ff; border-radius: 12px; padding: 12px 14px; }
+  .card h3 { color: #7000FF; margin-bottom: 4px; font-size: 11.5pt; }
+  .prompt { border: 1px solid #e6defa; border-radius: 12px; margin: 10px 0; page-break-inside: avoid; overflow: hidden; }
+  .prompt .ph { background: #f1e9ff; padding: 6px 12px; font-weight: 700; color: #5200c2; font-size: 10.5pt; }
+  .prompt pre { margin: 0; padding: 10px 12px; white-space: pre-wrap; font-family: "SF Mono", Menlo, monospace; font-size: 9.2pt; line-height: 1.45; color: #222; }
+  .note { background: #fff4f4; border-left: 3px solid #ff4d4f; padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 8px 0; font-size: 10.5pt; }
+  .tip { background: #f0fbf4; border-left: 3px solid #1db954; padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 8px 0; font-size: 10.5pt; }
+  .pb { page-break-before: always; }
+  .muted { color: #6b6b80; font-size: 10pt; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="sub">Shaxsiy qo‘llanma · Dars xaritasi</div>
+  <h1>Vibe Coding ochiq darsi</h1>
+  <div class="sub">Loyiha: Uzum Market klon sayti + saytga ulangan Telegram support bot</div>
+  <div class="meta">
+    <span class="chip">⏱ 2 soat 15 daqiqa</span>
+    <span class="chip">📅 Yakshanba</span>
+    <span class="chip">💳 Pullik dars — 100 000 so‘m</span>
+    <span class="chip">🎯 Yakuniy maqsad: to‘liq kursga yozilish</span>
+  </div>
+</div>
+
+<h2>Darsning 3 ta asosiy maqsadi</h2>
+<div class="goal">
+  <div><b>1. “Men ham qila olaman”</b>Har bir qatnashchi darsdan ishonch bilan chiqadi: dasturlashni bilmasa ham, AI bilan real loyiha qilish mumkinligini o‘z ko‘zi bilan ko‘radi.</div>
+  <div><b>2. 100 000 so‘mdan ko‘p qiymat</b>Ishlaydigan loyiha, tayyor promptlar to‘plami, to‘liq kod, dars yozuvi va AI bilan fikrlash usuli — bularning bozordagi narxi ancha yuqori.</div>
+  <div><b>3. Kursga tabiiy qiziqish</b>Darsda “eshikni ochaman”, kursda “butun uyni ko‘rsataman”. Bugun ulgurmagan narsalarni (baza, to‘lov, SMS) aniq nomlab, kursga ko‘prik quraman.</div>
+</div>
+<p class="tip"><b>Asosiy formula:</b> avval natijani ko‘rsataman → oddiy tilda tushuntiraman → jonli qilaman → natijani yana ko‘rsataman. Har 10–15 daqiqada bitta “wow” yoki interaktiv lahza bo‘lishi shart.</p>
+<p class="tip"><b>Darsning hikoya ramkasi:</b> “Bugun biz Uzum’ga yangi ishga kirgan dasturchilarmiz. Direktor topshiriq berdi: 2 soatda saytni va support tizimini ishga tushirish kerak.” Bu ramka butun darsni bitta qiziqarli missiyaga aylantiradi.</p>
+
+<h2>Darsdan oldin tayyorgarlik</h2>
+<div class="two">
+  <div class="card">
+    <h3>1 kun oldin</h3>
+    <ul class="check">
+      <li>Tayyor loyiha to‘liq ishlaydi va Vercel’da turibdi (demo havolasi bor)</li>
+      <li>Loyihani boshidan oxirigacha 1 marta to‘liq repetitsiya qildim, vaqtni o‘lchadim</li>
+      <li>Har bosqich uchun Git checkpoint bor: <i>step-1-ui</i>, <i>step-2-cart</i>, <i>step-3-bot</i></li>
+      <li>uzum.uz skrinshotlari tayyor: header, banner, kartochka, mahsulot sahifasi, savat, footer</li>
+      <li>24 ta mahsulot rasmi <i>public/products/</i> papkasida tayyor</li>
+      <li>Cursor promptlari (ushbu hujjat oxirida) alohida matn faylida turibdi</li>
+      <li>Gamma prezentatsiyasi tayyor, [ ] bilan belgilangan joylar to‘ldirilgan</li>
+      <li>Bonuslar tayyor: promptlar PDF, GitHub havolasi</li>
+      <li>Kurs taklifi tayyor: narx, chegirma, muddat, havola va QR kod</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>1 soat oldin</h3>
+    <ul class="check">
+      <li>Internet tekshirildi, zaxira sifatida telefon modemi tayyor</li>
+      <li>Cursor’da shrift 16–18, brauzerda zoom 110–125%</li>
+      <li>Bildirishnomalar o‘chirilgan (Focus / Bezovta qilmang rejimi)</li>
+      <li>Ortiqcha tablar yopiq. Faqat: Gamma, Cursor, localhost, uzum.uz, Telegram, Vercel</li>
+      <li>Mikrofon, kamera va yorug‘lik tekshirildi</li>
+      <li>Ekran yozuvi yoqildi</li>
+      <li>Telegram’da “Uzum Support” guruhi ochiq turibdi</li>
+      <li>Yordamchi chatni kuzatadi va savollarni yig‘ib boradi (agar bo‘lsa)</li>
+      <li>Yonimda suv bor 🙂</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Vaqt xaritasi (umumiy ko‘rinish)</h2>
+<table>
+  <tr><th style="width:110px">Vaqt</th><th>Bo‘lim</th><th style="width:190px">Natija</th></tr>
+  <tr><td>−00:05 – 00:00</td><td>Kutib olish, chatni “isitish”</td><td>Odamlar faollashadi</td></tr>
+  <tr><td>00:00 – 00:04</td><td>Salomlashish va o‘zimni tanishtirish</td><td>Ishonch va avtoritet</td></tr>
+  <tr><td>00:04 – 00:12</td><td>WOW-demo: tayyor loyihani ko‘rsatish</td><td>Qiziqish eng yuqori nuqtada</td></tr>
+  <tr><td>00:12 – 00:15</td><td>Dars xaritasi, qoidalar va bonus va’dasi</td><td>Oxirigacha qolish sababi</td></tr>
+  <tr><td>00:15 – 00:23</td><td>Vibe coding nima? Prompt formulasi</td><td>Fikrlash usuli</td></tr>
+  <tr><td>00:23 – 00:28</td><td>Asboblar va loyiha arxitekturasi</td><td>Umumiy rasm</td></tr>
+  <tr><td>00:28 – 00:58</td><td><b>1-qism:</b> Uzum Market interfeysi</td><td>Uzum’ga o‘xshash sayt</td></tr>
+  <tr><td>00:58 – 01:02</td><td>Mini tanaffus, savol-javob, kursga 1-ishora</td><td>Dam olish</td></tr>
+  <tr><td>01:02 – 01:22</td><td><b>2-qism:</b> Saralangan, savat, mahsulot sahifasi</td><td>Ishlaydigan do‘kon</td></tr>
+  <tr><td>01:22 – 01:47</td><td><b>3-qism:</b> Support chat + Telegram bot</td><td>Eng “sehrli” lahza</td></tr>
+  <tr><td>01:47 – 01:55</td><td>Deploy: saytni internetga chiqarish</td><td>Ikkinchi WOW</td></tr>
+  <tr><td>01:55 – 02:00</td><td>Xulosa va bilim qiymati</td><td>Qiymatni anglash</td></tr>
+  <tr><td>02:00 – 02:10</td><td>To‘liq kurs taqdimoti va maxsus taklif</td><td>Kursga yozilish</td></tr>
+  <tr><td>02:10 – 02:15</td><td>Savol-javob va yakun</td><td>Iliq xayrlashuv</td></tr>
+</table>
+
+<h2 class="pb">Darsning batafsil ssenariysi</h2>
+
+<div class="block">
+  <div class="block-head"><span class="time">−00:05 – 00:00</span><h3>Kutib olish</h3><span class="slide">Slayd 1</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>Efirni 5 daqiqa oldin ochaman, yengil musiqa qo‘yaman, ekranda Gamma’ning 1-slaydi turadi.</li>
+    <li>Kirib kelganlarni ismi bilan kutib olaman. Chatga ikkita oddiy savol tashlayman: qaysi shahardansiz va dasturlashdagi tajribangiz 0 dan 10 gacha qancha.</li>
+    <li>Darsni aytilgan vaqtda boshlayman, ko‘pi bilan 2–3 daqiqa kutaman.</li>
+  </ul>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Odamlar birinchi daqiqadanoq faol bo‘ladi, men esa auditoriya darajasini bilib olaman va tushuntirish tezligini shunga moslayman.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">00:00 – 00:04</span><h3>Salomlashish va o‘zimni tanishtirish</h3><span class="slide">Slayd 2</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>Salomlashaman, o‘zimni tanishtiraman: ismim, nima bilan shug‘ullanaman, 2–3 ta aniq natija raqamlar bilan (tajriba yili, loyihalar soni, o‘quvchilar soni).</li>
+    <li>Bitta qisqa shaxsiy hikoya aytaman: AI yordamida birinchi marta katta ishni qanchalik tez bajarganim.</li>
+    <li>Darsning va’dasini beraman.</li>
+  </ul>
+  <span class="lbl say">Asosiy gap</span>
+  <div class="say-box">“2 soatdan keyin ko‘z oldingizda internetda ishlaydigan loyiha bo‘ladi va siz uni qanday qilganimizni qadamma-qadam tushunasiz.”</div>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Ishonch va avtoritet paydo bo‘ladi. Tanishtirishni 2–3 daqiqadan oshirmayman — odamlar men haqimda eshitish uchun emas, natija uchun kelgan.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">00:04 – 00:12</span><h3>WOW-demo: avval tayyor natijani ko‘rsataman</h3><span class="slide">Slayd 3–4</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ol>
+    <li>Tayyor saytni uzum.uz bilan yonma-yon ochaman — farqini topish qiyinligini ko‘rsataman.</li>
+    <li>Yurakchani bosaman → “Saralangan” soni oshadi, sahifasini ochaman.</li>
+    <li>Savat tugmasini bosaman → “Savatga qo‘shildi”, savat sahifasi, miqdor va jami summa.</li>
+    <li>Pastki o‘ng burchakdagi support belgisini bosaman → chat ochiladi, “yozmoqda...” va “Assalomu alaykum” salomi chiqadi.</li>
+    <li><b>Eng kuchli lahza:</b> demo havolasini chatga tashlayman, qatnashchilar support chatga savol yuboradi, xabarlar Telegram guruhimga jonli tushayotganini ekranda ko‘rsataman.</li>
+  </ol>
+  <span class="lbl say">Asosiy gap</span>
+  <div class="say-box">“Bularning hammasini bugun noldan, birgalikda, AI yordamida 2 soatda qilamiz.”</div>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Odamlar bugun nima qilishimizni aniq ko‘radi, qiziqish eng yuqori nuqtaga chiqadi va hamma darsni oxirigacha diqqat bilan kuzatadi.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">00:12 – 00:15</span><h3>Dars xaritasi, qoidalar va bonus va’dasi</h3><span class="slide">Slayd 5–6</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>Dars xaritasini ko‘rsataman: 3 ta amaliy qism, deploy, bonuslar.</li>
+    <li>Qoidalarni aytaman: savollar chatga yoziladi, har bo‘lim oxirida javob beraman; hamma narsani yozib olish shart emas — yozuv va kod beriladi.</li>
+    <li>Bonusni e’lon qilaman: oxirigacha qolganlarga barcha promptlar to‘plami va loyihaning to‘liq kodi.</li>
+  </ul>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Odamlar xotirjam bo‘ladi (hammasi beriladi) va oxirigacha qolish uchun aniq sababga ega bo‘ladi.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">00:15 – 00:23</span><h3>Vibe coding nima? (qisqa nazariya)</h3><span class="slide">Slayd 7–11</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>Ta’rifni oddiy tilda beraman: kodni qatorma-qator yozish o‘rniga AI’ga nima kerakligini aniq tushuntirish, natijani tekshirish va yo‘naltirish.</li>
+    <li>An’anaviy dasturlash bilan taqqoslayman: oylar va sintaksis yodlash o‘rniga — soatlar va aniq fikr.</li>
+    <li>Uchta mifni buzaman: “AI hammasini o‘zi qiladi”, “dasturchilar keraksiz bo‘ladi”, “matematik bo‘lish kerak”.</li>
+    <li>Prompt formulasini ko‘rsataman: <b>Rol + Kontekst + Vazifa + Cheklovlar + Natija</b>. Yomon va yaxshi promptni yonma-yon solishtiraman.</li>
+  </ul>
+  <span class="lbl say">Asosiy gap</span>
+  <div class="say-box">“Siz — arxitektor va menejer, AI — tez ishlaydigan jamoangiz. Kod yozishni bilish emas, nima qurayotganingizni tushunish muhim.”</div>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Qatnashchilar shunchaki takrorlashni emas, fikrlash usulini oladi. Aynan shu narsa ular to‘lagan puldan ancha qimmat ekanini his qiladi.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">00:23 – 00:28</span><h3>Asboblar va loyiha arxitekturasi</h3><span class="slide">Slayd 12–13</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>Asboblarni ko‘rsataman: Cursor, Next.js + Tailwind CSS, Zustand, Telegram Bot API, GitHub + Vercel.</li>
+    <li>Arxitekturani oddiy o‘xshatish bilan tushuntiraman: <i>sayt — do‘kon vitrinasi, server (API) — ofitsiant, bot tokeni — omborxona kaliti, Telegram guruh — support xonasi.</i></li>
+    <li>Cursor’da bo‘sh papka ochaman — hammamiz bir xil nuqtadan boshlaymiz.</li>
+  </ul>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Murakkab texnik tushunchalar hayotiy misollar orqali yengil qabul qilinadi.</p>
+</div>
+
+<div class="part"><span>1-QISM</span> · Uzum Market interfeysi · 30 daqiqa</div>
+<div class="block">
+  <div class="block-head"><span class="time">00:28 – 00:58</span><h3>Uzum UI klonini yaratish</h3><span class="slide">Slayd 14–19</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ol>
+    <li><b>Bo‘laklarga ajratish (3 daq).</b> uzum.uz’ni ochib, saytni 6 qismga ajrataman: yuqori panel, header, kategoriyalar, banner, mahsulotlar to‘ri, footer. “Katta vazifani kichik bo‘laklarga bo‘lish — vibe coding’ning birinchi qoidasi.”</li>
+    <li><b>Loyiha va header (7 daq).</b> Skrinshotlarni Cursor’ga beraman, <b>P1</b> promptini yuboraman. AI ishlayotganda nima qilayotganini izohlab boraman.</li>
+    <li><b>Banner va kategoriyalar (5 daq).</b> <b>P2</b> prompt.</li>
+    <li><b>Mahsulot kartochkasi va to‘r (8 daq).</b> <b>P3</b> prompt. Kartochka anatomiyasini slaydda ko‘rsatib, keyin natijani brauzerda solishtiraman.</li>
+    <li><b>Footer va mobil versiya (3 daq).</b> <b>P4</b> prompt, telefon o‘lchamida ko‘rsataman.</li>
+    <li><b>Piksel darajasida tekshiruv (4 daq).</b> uzum.uz va o‘z saytimni yonma-yon qo‘yaman, farqlarni sanab, <b>P5</b> prompt bilan tuzattiraman.</li>
+  </ol>
+  <p class="note"><b>AI xato qilsa</b> — yashirmayman, aksincha jonli tuzataman: “Mana real vibe coding: xatoni ko‘rish va AI’ni to‘g‘ri yo‘naltirish.” Agar loyiha jiddiy buzilsa — <i>step-1-ui</i> checkpoint’iga qaytaman.</p>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Birinchi katta natija: ekranda Uzum’ga deyarli bir xil sayt paydo bo‘ladi. Odamlarda “men ham shunday qila olaman” degan fikr tug‘iladi.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">00:58 – 01:02</span><h3>Mini tanaffus va kursga birinchi ishora</h3><span class="slide">Slayd 20</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>3–4 ta savolga qisqa javob beraman.</li>
+    <li>Kursga yumshoq ishora qilaman, lekin sotmayman.</li>
+  </ul>
+  <span class="lbl say">Asosiy gap</span>
+  <div class="say-box">“Kursda biz bunday saytlarni ma’lumotlar bazasi, admin panel va to‘lov tizimi bilan to‘liq holatga keltiramiz.”</div>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Odamlar dam oladi, kursga qiziqishning birinchi urug‘i ekiladi.</p>
+</div>
+
+<div class="part"><span>2-QISM</span> · Saytni jonlantiramiz · 20 daqiqa</div>
+<div class="block">
+  <div class="block-head"><span class="time">01:02 – 01:22</span><h3>Saralangan, savat, mahsulot sahifasi</h3><span class="slide">Slayd 21–24</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ol>
+    <li><b>Saralangan — yurakcha (5 daq).</b> <b>P6</b> prompt. Yurakcha bosilganda mahsulot saralanganlarga tushadi, header’dagi son oshadi. Sahifani yangilab, ma’lumot saqlanib qolganini ko‘rsataman.</li>
+    <li><b>Savat (7 daq).</b> <b>P7</b> prompt. Savatga qo‘shish, bildirishnoma, miqdorni o‘zgartirish, jami summa.</li>
+    <li><b>Mahsulot sahifasi (4 daq).</b> <b>P8</b> prompt.</li>
+    <li><b>Rasmiylashtirish (4 daq, vaqt bo‘lsa).</b> <b>P9</b> prompt: forma → “Buyurtmangiz qabul qilindi”.</li>
+  </ol>
+  <p class="tip">Har bir promptdan keyin darhol brauzerda natijani ko‘rsataman. Natija tez-tez ko‘rinsa, diqqat tushmaydi.</p>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Endi bu “chiroyli rasm” emas, haqiqiy ishlaydigan do‘kon. Real loyihaga yaqinlik hissi kuchayadi.</p>
+</div>
+
+<div class="part"><span>3-QISM</span> · Support chat + Telegram bot · 25 daqiqa</div>
+<div class="block">
+  <div class="block-head"><span class="time">01:22 – 01:47</span><h3>Saytga ulangan Telegram support tizimi</h3><span class="slide">Slayd 25–31</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ol>
+    <li><b>Bot yaratish (4 daq).</b> Telegram’da @BotFather → <i>/newbot</i> → nom: <i>Uzum Support</i> → username → token. Tokenni <i>.env.local</i> fayliga yozaman.</li>
+    <li><b>Guruh va chat_id (4 daq).</b> “Uzum Support” guruhini ochaman, botni qo‘shaman, guruhga xabar yozaman. Brauzerda <i>https://api.telegram.org/bot&lt;TOKEN&gt;/getUpdates</i> ni ochib, guruh ID’sini olaman (manfiy son, odatda −100 bilan boshlanadi).</li>
+    <li><b>Server qismi (5 daq).</b> <b>P10</b> prompt: <i>/api/support</i> telefon va savolni qabul qilib, Telegram guruhga chiroyli formatda yuboradi.</li>
+    <li><b>Support vidjeti (8 daq).</b> <b>P11</b> prompt: pastki o‘ng burchakdagi belgi, 360×520 px kichik oyna, Telegram uslubidagi chat, “yozmoqda...” animatsiyasi, salomlashish, savol → telefon raqami → yuborish.</li>
+    <li><b>Jonli test (2 daq).</b> O‘zim savol yuboraman → xabar telefonimdagi Telegram’ga tushadi, ekranda ko‘rsataman.</li>
+    <li><b>Bonus (2 daq, vaqt bo‘lsa).</b> <b>P12</b> prompt: xabar ostida “✅ Bog‘lanildi” tugmasi — operator bosganda kim javob bergani yoziladi.</li>
+  </ol>
+  <span class="lbl say">Asosiy gaplar</span>
+  <div class="say-box">“Token — bu parol. U hech qachon saytning frontend qismiga va GitHub’ga chiqmaydi.”</div>
+  <div class="say-box">“Bugun SMS xizmatini (Eskiz) ulashga vaqtimiz yetmaydi, shuning uchun xaridor raqamini qoldiradi, operator o‘zi qo‘ng‘iroq qiladi. Eskiz va to‘lov tizimlarini kursda ulaymiz.”</div>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Darsning eng “sehrli” lahzasi: saytdan yozilgan xabar bir soniyada telefonga keladi. Odamlar bu tizimni o‘z biznesida yoki mijozlari uchun qanday ishlatishni darhol tasavvur qiladi.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">01:47 – 01:55</span><h3>Deploy: saytni internetga chiqarish</h3><span class="slide">Slayd 32–33</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ol>
+    <li>Kodni GitHub’ga yuklayman (<i>.env.local</i> yuklanmaganini ko‘rsataman).</li>
+    <li>Vercel → New Project → Import → Environment Variables: <i>TELEGRAM_BOT_TOKEN</i>, <i>TELEGRAM_CHAT_ID</i> → Deploy.</li>
+    <li>Tayyor havolani chatga tashlayman: hamma kirib, support chatga savol yuboradi. Telegram guruhga xabarlar oqib kelayotganini ekranda ko‘rsataman.</li>
+  </ol>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Ikkinchi WOW: bu endi “mening kompyuterimdagi” loyiha emas, butun dunyo ko‘ra oladigan haqiqiy sayt. Qatnashchilar havolani do‘stlariga yuborishi ham mumkin — bu bepul reklama.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">01:55 – 02:00</span><h3>Xulosa va bilim qiymati</h3><span class="slide">Slayd 34–35</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>Bugungi 6 ta natijani sanab chiqaman (slayddagi ro‘yxat).</li>
+    <li>Qiymatni hisoblab beraman: bunday sayt va bot frilansda taxminan [3–5 mln] so‘m turadi; bugun 100 000 so‘mga uni qilish usuli, promptlar, kod va yozuv olindi.</li>
+  </ul>
+  <span class="lbl say">Asosiy gap</span>
+  <div class="say-box">“Bugun siz katta vazifani bo‘laklarga bo‘lishni, AI’ga aniq topshiriq berishni, xatoni tuzatishni va loyihani internetga chiqarishni ko‘rdingiz. Bu — har qanday loyihada ishlaydigan usul.”</div>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Odamlar to‘lagan pulidan ko‘p narsa olganini aniq raqamlar bilan anglaydi.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">02:00 – 02:10</span><h3>To‘liq kurs taqdimoti va maxsus taklif</h3><span class="slide">Slayd 36–41</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ol>
+    <li><b>Ko‘prik:</b> bugun ulgurmagan narsalarni aniq nomlayman — ma’lumotlar bazasi, admin panel, ro‘yxatdan o‘tish, Click/Payme to‘lovi, Eskiz SMS, mijoz topish.</li>
+    <li><b>Kurs haqida:</b> nomi, davomiyligi, formati, modullari, yakuniy natija (portfolio uchun 3–5 ta loyiha), kimlar uchun.</li>
+    <li><b>Ijtimoiy isbot:</b> o‘quvchilar natijalari va sharhlari (bo‘lsa — skrinshotlar).</li>
+    <li><b>Maxsus taklif:</b> faqat shu dars qatnashchilari uchun chegirma; bugungi 100 000 so‘m kurs narxidan chegirib beriladi; taklif [48] soat amal qiladi. Joylar soni cheklangan bo‘lsa — buni ham aytaman (faqat rost bo‘lsa).</li>
+    <li><b>Aniq harakat:</b> QR kod va havola ekranda, “hozir formani to‘ldiring” deb aytaman, 1 daqiqa jim turib, odamlarga yozilishga vaqt beraman.</li>
+  </ol>
+  <p class="tip">Taklifni bosim bilan emas, g‘amxo‘rlik ohangida aytaman: “Bugun boshlagan ishingizni yarim yo‘lda qoldirmang — kursda birga oxiriga yetkazamiz.”</p>
+  <span class="lbl fx">Effekt</span>
+  <p class="fx-box">Aniq, qadrli va muddati cheklangan taklif. Darsda qiziqish eng yuqori bo‘lgan paytda qaror qabul qilish oson bo‘ladi.</p>
+</div>
+
+<div class="block">
+  <div class="block-head"><span class="time">02:10 – 02:15</span><h3>Savol-javob va yakun</h3><span class="slide">Slayd 42–44</span></div>
+  <span class="lbl do">Nima qilaman</span>
+  <ul>
+    <li>Savollarga javob beraman, kurs haqidagi e’tirozlarni ham shu yerda yopaman (vaqt, narx, “men uddalay olamanmi?”).</li>
+    <li>Bonuslarni qachon va qayerga yuborishimni aytaman.</li>
+    <li>Rahmat aytaman, kontaktlar va QR kodni yana bir bor ko‘rsataman.</li>
+  </ul>
+  <span class="lbl do">Darsdan keyin</span>
+  <ul>
+    <li><b>1 soat ichida:</b> dars yozuvi, promptlar PDF va kod havolasini yuboraman.</li>
+    <li><b>24 soat ichida:</b> chegirma muddati haqida eslatma xabar va o‘quvchilarning bir nechta fikrlari.</li>
+    <li><b>Taklif tugashidan 3 soat oldin:</b> oxirgi eslatma.</li>
+  </ul>
+</div>
+
+<h2 class="pb">Favqulodda holatlar uchun reja</h2>
+<table>
+  <tr><th style="width:38%">Vaziyat</th><th>Nima qilaman</th></tr>
+  <tr><td>AI noto‘g‘ri kod yozdi, loyiha buzildi</td><td>Xatoni AI’ga o‘zini ko‘rsataman. 2 urinishda tuzalmasa — tegishli checkpoint’ga qaytaman (<i>git checkout step-N</i>). “Real hayotda ham shunday bo‘ladi” deb tushuntiraman.</td></tr>
+  <tr><td>Hydration yoki boshqa qizil xato chiqdi</td><td>Xato matnini to‘liq nusxalab, Cursor’ga “shu xatoni tuzat” deb beraman — bu ham vibe coding’ning bir qismi.</td></tr>
+  <tr><td>Internet uzildi</td><td>Telefon modemiga o‘taman. Yordamchi chatda vaziyatni tushuntirib turadi.</td></tr>
+  <tr><td>Vaqt yetmayapti</td><td>Ixtiyoriy qismlarni tashlab ketaman: rasmiylashtirish (P9), “Bog‘lanildi” tugmasi (P12). Ularni kursga “qoldiraman”.</td></tr>
+  <tr><td>Telegram’ga xabar kelmayapti</td><td>Tekshiraman: token to‘g‘rimi; bot guruhdami; chat_id manfiy son (−100...); <i>.env.local</i> o‘zgargandan keyin server qayta ishga tushirildimi.</td></tr>
+  <tr><td>Vercel’da bot ishlamayapti</td><td>Environment Variables qo‘shilganini tekshirib, Redeploy qilaman.</td></tr>
+  <tr><td>Auditoriya sust</td><td>Chatga “+” yoki “1/2” bilan javob beriladigan oddiy savollar beraman; ismlarini aytib murojaat qilaman.</td></tr>
+</table>
+
+<h2>Darsni qiziqarli va sodda qilish qoidalari</h2>
+<div class="two">
+  <div class="card">
+    <h3>Gapirish uslubi</h3>
+    <ul>
+      <li>Sekin va aniq gapiraman, texnik so‘zlarni hayotiy o‘xshatish bilan tushuntiraman.</li>
+      <li>Kodni qatorma-qator emas, mantiqni tushuntiraman.</li>
+      <li>“Biz” deb gapiraman: “hozir biz qilamiz”.</li>
+      <li>AI ishlayotgan paytdagi bo‘shliqni izoh yoki qisqa hikoya bilan to‘ldiraman.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Diqqatni ushlab turish</h3>
+    <ul>
+      <li>Har 10–15 daqiqada bitta interaktiv lahza.</li>
+      <li>Har promptdan keyin natijani darhol ko‘rsataman.</li>
+      <li>Chatdagi ismlarni aytib, savollarga murojaat qilaman.</li>
+      <li>Bonus va oxirgi sovg‘ani dars davomida 2–3 marta eslatib turaman.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="pb">Ilova: darsda ishlatiladigan Cursor promptlari</h2>
+<p class="muted">Promptlarni darsdan oldin alohida matn fayliga ko‘chirib qo‘yaman. Kvadrat qavs [ ] ichidagilarni vaziyatga qarab to‘ldiraman.</p>
+
+<div class="prompt"><div class="ph">P1 — Loyiha va header</div><pre>Sen tajribali frontend dasturchisan. Next.js 15 (App Router), TypeScript va Tailwind CSS asosida Uzum Market (uzum.uz) saytining vizual klonini yaratamiz. Ilovadagi skrinshotlarga qarab ishla.
+
+1-vazifa: loyihani yarat, ishga tushir (npm run dev) va header’ni yasa.
+- Eng yuqorida ingichka kulrang panel: chapda "Toshkent" shahar tanlovi va "Topshirish punktlari", o‘ngda "Sotuvchi bo‘lish", "Savol-javob", "Buyurtmalarim" va "O‘zbekcha" til tanlovi.
+- Asosiy qator: chapda "uzum market" logotipi, binafsha (#7000FF) "Katalog" tugmasi, keng qidiruv maydoni ("Mahsulotlar va turkumlar izlash"), o‘ngda "Kirish", "Saralangan" va "Savat" ikonkali tugmalari.
+- Uning ostida kategoriyalar qatori.
+
+Talablar: Inter shrifti, lucide-react ikonkalari, header sticky bo‘lsin. Ranglar, shrift o‘lchamlari va masofalar skrinshotga maksimal darajada mos kelsin. Har bir qismni components/ papkasida alohida komponent qil.</pre></div>
+
+<div class="prompt"><div class="ph">P2 — Banner va kategoriyalar</div><pre>Header ostiga uzum.uz’dagidek banner karusel qo‘sh: kengligi konteyner bo‘yicha, balandligi desktopda taxminan 400px, burchaklari 16px yumaloq. Har 5 soniyada avtomatik almashsin, chap va o‘ng o‘q tugmalari faqat hover’da ko‘rinsin, pastda nuqtali indikator bo‘lsin. Rasmlar public/banners/ papkasida (1.jpg ... 5.jpg).
+Karusel ostida "Mashhur", "Arzon narxlar", "Yangi kelganlar" bo‘lim sarlavhalari uchun qayta ishlatiladigan SectionTitle komponentini tayyorla.</pre></div>
+
+<div class="prompt"><div class="ph">P3 — Mahsulot kartochkasi va ma’lumotlar</div><pre>data/products.ts faylida 24 ta mahsulot yarat: id, title (o‘zbekcha nom), price, oldPrice, rating, reviewsCount, image, category, installmentPerMonth. Narxlar so‘mda va real ko‘rinishda bo‘lsin (masalan, smartfon 3 499 000 so‘m). Rasmlar: public/products/1.jpg ... 24.jpg.
+
+ProductCard komponenti uzum.uz’dagi kartochkaga aniq mos bo‘lsin:
+- rasm 3:4 nisbatda, yuqori o‘ng burchakda yurakcha tugmasi;
+- nomi 2 qatorgacha, qolgani "..." bilan qisqarsin;
+- ★ reyting va "(1 250 ta sharh)";
+- sariq fonli "oyiga 45 000 so‘m" yorlig‘i;
+- eski narx kulrang va chizilgan, yangi narx qalin;
+- o‘ng pastda savat ikonkali tugma.
+Hover’da yengil soya paydo bo‘lsin va rasm biroz kattalashsin. To‘r: desktopda 5, planshetda 3, mobilda 2 ustun.
+Narxni "3 499 000 so‘m" ko‘rinishida chiqaradigan formatPrice() yordamchi funksiyasini yoz.</pre></div>
+
+<div class="prompt"><div class="ph">P4 — Footer va mobil versiya</div><pre>uzum.uz’dagidek footer qo‘sh: 4 ta ustun ("Biz haqimizda", "Foydalanuvchilarga", "Tadbirkorlarga", "Ilovani yuklab olish"), ijtimoiy tarmoq ikonkalari, pastda huquqiy matnlar.
+So‘ng butun saytni mobil (375px) va planshet (768px) uchun moslashtir: mobilda header ixchamlashsin, pastda Uzum ilovasidagidek navigatsiya paneli bo‘lsin (Bosh sahifa, Katalog, Savat, Saralangan, Kabinet).</pre></div>
+
+<div class="prompt"><div class="ph">P5 — Piksel darajasida tuzatish</div><pre>Ilovadagi ikkita skrinshotni solishtir: birinchisi uzum.uz, ikkinchisi bizning sayt. Quyidagi farqlarni tuzat: [farqlar ro‘yxati].
+Shuningdek o‘zing ko‘rgan boshqa farqlarni ham top: ranglar, shrift o‘lchami va qalinligi, masofalar, burchak radiuslari, soyalar. Faqat shu farqlarni tuzat, boshqa narsani o‘zgartirma.</pre></div>
+
+<div class="prompt"><div class="ph">P6 — Saralangan (yurakcha)</div><pre>Zustand va persist middleware yordamida store/favorites.ts yarat (localStorage’da saqlansin).
+ProductCard’dagi yurakcha bosilganda mahsulot saralanganlarga qo‘shilsin yoki olib tashlansin. Tanlangan holatda yurakcha binafsha rangda to‘lib tursin va kichik "pop" animatsiyasi bo‘lsin.
+Header’dagi "Saralangan" yonida soni ko‘rinsin (badge).
+/favorites sahifasi: saralangan mahsulotlar to‘ri. Ro‘yxat bo‘sh bo‘lsa — uzum.uz’dagidek bo‘sh holat: rasm, matn va "Bosh sahifaga" tugmasi.
+Next.js’da hydration xatosi chiqmasligini ta’minla.</pre></div>
+
+<div class="prompt"><div class="ph">P7 — Savat</div><pre>store/cart.ts yarat (Zustand + persist): add, remove, increase, decrease, clear, totalCount, totalPrice.
+Kartochkadagi savat tugmasi mahsulotni savatga qo‘shsin va pastda "Mahsulot savatga qo‘shildi" bildirishnomasi chiqsin ("Savatga o‘tish" havolasi bilan). Header’dagi "Savat" yonida umumiy son ko‘rinsin.
+/cart sahifasi uzum.uz savatiga o‘xshash bo‘lsin: chapda mahsulotlar ro‘yxati (rasm, nom, narx, − son + tugmalari, o‘chirish), o‘ngda sticky "Buyurtmangiz" bloki: mahsulotlar soni, chegirma, jami summa, yetkazib berish sanasi va binafsha "Rasmiylashtirishga o‘tish" tugmasi. Savat bo‘sh bo‘lsa — bo‘sh holat ko‘rsatilsin.</pre></div>
+
+<div class="prompt"><div class="ph">P8 — Mahsulot sahifasi</div><pre>/product/[id] sahifasini yarat: chapda rasm galereyasi (kichik rasmlar ro‘yxati va katta rasm), o‘ngda nom, reyting va sharhlar soni, narx, eski narx, chegirma foizi, sariq muddatli to‘lov bloki ("oyiga 45 000 so‘m, 12 oy"), miqdor tanlash, "Savatga qo‘shish" va yurakcha tugmalari. Pastda "O‘xshash mahsulotlar" to‘ri.
+Kartochka bosilganda shu sahifaga o‘tilsin (yurakcha va savat tugmalari bundan mustasno).</pre></div>
+
+<div class="prompt"><div class="ph">P9 — Rasmiylashtirish (ixtiyoriy)</div><pre>/checkout sahifasini yarat: ism, telefon (+998 maskasi bilan), shahar, manzil, yetkazib berish usuli (topshirish punkti yoki kuryer), to‘lov usuli (naqd yoki karta). Barcha maydonlarda validatsiya bo‘lsin.
+"Buyurtma berish" bosilganda savat tozalansin va /success sahifasiga o‘tilsin: "Buyurtmangiz qabul qilindi!", buyurtma raqami va "Xaridni davom ettirish" tugmasi.</pre></div>
+
+<div class="prompt"><div class="ph">P10 — Server: /api/support</div><pre>app/api/support/route.ts yarat (POST). Qabul qiladi: phone, question, page.
+Tekshiruv: telefon +998 bilan boshlanib, jami 12 ta raqamdan iborat bo‘lsin; savol 3 dan 1000 belgigacha.
+Telegram Bot API sendMessage orqali TELEGRAM_CHAT_ID guruhiga HTML formatda xabar yubor:
+🆕 <b>Yangi murojaat</b>
+📞 Telefon: ...
+❓ Savol: ...
+🌐 Sahifa: ...
+🕒 Vaqt: (Toshkent vaqti, dd.mm.yyyy hh:mm)
+
+Token va chat_id faqat process.env’dan o‘qilsin (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID) va frontendga hech qachon chiqmasin. Foydalanuvchi matnidagi HTML belgilarni escape qil. Muvaffaqiyatda {ok: true}, xatoda tushunarli xabar va mos status kod qaytar. .env.example faylini ham yarat.</pre></div>
+
+<div class="prompt"><div class="ph">P11 — Support vidjeti (Telegram uslubidagi chat)</div><pre>components/SupportWidget.tsx yarat va uni layout’ga qo‘sh.
+
+Belgi: pastki o‘ng burchakda (fixed, bottom 24px, right 24px), 60px binafsha dumaloq tugma, chat ikonkasi, yengil "pulse" animatsiyasi.
+Bosilganda belgi ustida 360×520 px oyna ochilsin (mobilda deyarli to‘liq ekran), silliq scale va fade animatsiyasi bilan.
+
+Dizayn Telegram chatiga o‘xshash bo‘lsin: tepada binafsha header (avatar, "Uzum Support", yashil nuqta bilan "onlayn", yopish tugmasi), o‘rtada naqshli och fon, chapda operator xabarlari (oq pufakchalar), o‘ngda foydalanuvchi xabarlari (och binafsha pufakchalar), har birida vaqt.
+
+Oqim:
+1) Oyna ochilganda 1 soniya "yozmoqda..." animatsiyasi, keyin: "Assalomu alaykum! 👋 Uzum Market support xizmatiga xush kelibsiz. Savolingizni yozib qoldiring — mutaxassislarimiz tez orada siz bilan bog‘lanadi."
+2) Foydalanuvchi savolini yozadi → yana "yozmoqda...", keyin: "Rahmat! Siz bilan bog‘lanishimiz uchun telefon raqamingizni kiriting." Pastdagi input +998 (__) ___-__-__ maskali telefon maydoniga aylansin.
+3) Raqam to‘g‘ri kiritilsa, ma’lumot /api/support ga yuborilsin. Yuborilayotganda loader ko‘rinsin. Muvaffaqiyatda: "Murojaatingiz qabul qilindi ✅ Mutaxassislarimiz [raqam] raqamiga tez orada qo‘ng‘iroq qilishadi." Xatoda: "Xatolik yuz berdi, qaytadan urinib ko‘ring."
+Enter bilan yuborish, yangi xabarda avtomatik pastga scroll va "Yangi murojaat" tugmasi bilan qaytadan boshlash imkoniyati bo‘lsin.</pre></div>
+
+<div class="prompt"><div class="ph">P12 — Bonus: “Bog‘lanildi” tugmasi (ixtiyoriy)</div><pre>Telegram’ga yuborilayotgan xabarga "✅ Bog‘lanildi" inline tugmasini qo‘sh.
+app/api/telegram/route.ts webhook yarat: callback_query kelganda xabar matni oxiriga "✅ Bog‘lanildi: @operator_username, soat" qo‘shib editMessageText qilsin, tugmani olib tashlasin va answerCallbackQuery yuborsin.
+Deploydan keyin setWebhook qilish uchun kerakli buyruqni ham yozib ber.</pre></div>
+
+</body>
+</html>
